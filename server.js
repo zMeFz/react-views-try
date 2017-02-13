@@ -3,7 +3,6 @@
 const path 			= require('path');
 const express 		= require('express')
 const mongoose 		= require('mongoose');
-// const controllers 	= require('./controllers');
 const router 		= require('./router');
 
 const port 		= process.env.PORT 		|| 3000;
