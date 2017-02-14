@@ -12,6 +12,6 @@
     "Express": "^3.0.1",
     "express": "^4.14.1",
     "mongoose": "^4.8.2",
-    "requiretree": "0.0.1"
+    "require-tree": "^1.1.1"
   }
 }

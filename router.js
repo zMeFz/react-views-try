@@ -1,22 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const requireTree = require('require-tree')
 const controllers 	= requireTree('./controllers');
-// var bodyParser = require('body-parser')
- 
-// var jsonParser = bodyParser.json()
-// var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const Kitten 	= require('./models/kitten.js');
+var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  	Kitten.find(function (err, kittens) {
-	  	if (err) return console.error(err);
-  		res.send(kittens.map(kitten => kitten.name))
-	})
-});
+router.get('/kittens', controllers.kitten.show);
+router.get('/kittens/new', controllers.kitten.new);
+router.post('/kittens', controllers.kitten.create);
 
-router.get('/new', );
 module.exports = router;
-
-

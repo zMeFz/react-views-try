@@ -8,6 +8,7 @@ const router 		= require('./router');
 const port 		= process.env.PORT 		|| 3000;
 const env		= process.env.NODE_ENV 	|| 'production';
 const database 	= process.env.DATABASE 	|| 'database-try';
+ 
 
 const app = express()
 app.use(router);
@@ -23,7 +24,6 @@ mongoose.connection.once('open', function() {
 });
 
 app.use(express.static(path.join(__dirname, 'static')));
-
 
 app.listen(port, err => {
   if (err) {
