@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// const controllers 	= require('./controllers');
+const controllers 	= requireTree('./controllers');
 // var bodyParser = require('body-parser')
  
 // var jsonParser = bodyParser.json()
@@ -16,13 +16,7 @@ router.get('/', function(req, res, next) {
 	})
 });
 
-router.get('/new', function(req, res, next) {
-	var kitten = new Kitten({ name: req.query.name });
-	kitten.save(function (err, kitten) {
-	  if (err) return console.error(err);
-	  res.send(kitten)
-	});  	
-});
+router.get('/new', );
 module.exports = router;
 
 
