@@ -3,7 +3,9 @@ var React = require('react');
 var Kitten = ({kitten}) => {
 	return(
 		<div>
-			<h4>Name: {kitten.name || "anonymous"}</h4>
+			<a href={"/kittens/" + kitten._id}>
+				<h4>{kitten.name || "anonymous"} kitten</h4>
+			</a>			
 		</div>
 	)
 }

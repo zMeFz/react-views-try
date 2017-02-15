@@ -1,19 +1,20 @@
 'use strict';
 
-const path 				= require('path');
-const express 		= require('express')
-const mongoose 		= require('mongoose');
-const routes 			= require('./routes');
+const path 				  = require('path');
+const express 		  = require('express')
+const mongoose      = require('mongoose');
+const autoIncrement = require("mongodb-autoincrement");
+const routes        = require('./routes');
 
-const port 				= process.env.PORT 		|| 3000;
-const env					= process.env.NODE_ENV 	|| 'production';
-const database 		= process.env.DATABASE 	|| 'database-try';
+const port          = process.env.PORT    || 3000;
+const env           = process.env.NODE_ENV  || 'production';
+const database      = process.env.DATABASE  || 'database-try';
 
 const app = express()
 
 app.use(function (req, res, next) {
-	console.log('Required: ' + req.url);
-	next();
+  console.log('Required: ' + req.url);
+  next();
 });
 
 app.set('views', __dirname + '/views');
@@ -22,6 +23,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 routes(app)
 
+mongoose.plugin(autoIncrement.mongoosePlugin);
 mongoose.connect('mongodb://localhost/' + database);
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
@@ -36,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.use(function(req, res, next) {
 	res.status(404);
-	render('error', { subject: 'Page'}) (req, res);
+	res.send('Page not found.');
 });
 
 app.use('/css', express.static(__dirname + '/src/css'));

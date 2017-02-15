@@ -5,7 +5,20 @@ class DefaultLayout extends React.Component {
     return (
       <html>
         <head><title>{this.props.title}</title></head>
-        <body>{this.props.children}</body>
+        <body>
+        	<nav>
+        		<ul>
+        			<li>
+        				<a href="/kittens/">All Kittens</a>
+        			</li>
+        			<li>
+        				<a href="/kittens/new">New Kitten</a>
+        			</li>
+        		</ul>
+        	</nav>
+        	<hr />
+        	{this.props.children}
+        </body>
       </html>
     );
   }
