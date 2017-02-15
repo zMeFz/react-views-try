@@ -9,9 +9,6 @@ var AllKittensPage = ({kittens}) => {
 	    { kittens.length 
 	    	? <Kittens kittens={kittens} /> 
 	    	: "No kittens now :("}
-	    <form action="/kittens/new">
-		    <input type="submit" value="Add new kitten" />
-		</form>
 	  </DefaultLayout>
 	)
 }
