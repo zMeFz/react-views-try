@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.use(function(req, res, next) {
 	res.status(404);
-	render('error', { subject: 'Page'}) (req, res);
+  res.end();
 });
 
 app.use('/css', express.static(__dirname + '/src/css'));
