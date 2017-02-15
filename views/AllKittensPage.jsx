@@ -5,7 +5,13 @@ var Kittens = require('./components/Kittens');
 var AllKittensPage = ({kittens}) => {
 	return (
 	  <DefaultLayout title="All Kittens | KotoList">
-	    <Kittens kittens={kittens} />
+	  	<h2>All Kittens:</h2>
+	    { kittens.length 
+	    	? <Kittens kittens={kittens} /> 
+	    	: "No kittens now :("}
+	    <form action="/kittens/new">
+		    <input type="submit" value="Add new kitten" />
+		</form>
 	  </DefaultLayout>
 	)
 }

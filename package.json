@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "Express": "^3.0.1",
+    "body-parser": "^1.16.1",
     "express": "^4.14.1",
     "express-react-views": "^0.10.2",
     "mongodb-autoincrement": "^1.0.1",
