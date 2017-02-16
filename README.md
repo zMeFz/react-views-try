@@ -21,4 +21,8 @@ the last string should be "...waiting for connections on port..."
 
 # Start server
 
-	$ node server.js 
+	$ npm start
+
+# Start server[dev]
+
+	$ gulp
