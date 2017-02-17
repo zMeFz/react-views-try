@@ -21,6 +21,7 @@
     "require-tree": "^1.1.1"
   },
   "devDependencies": {
+    "child_process": "^1.0.2",
     "gulp": "^3.9.1",
     "gulp-develop-server": "^0.5.2",
     "gulp-livereload": "^3.8.1"
